@@ -40,8 +40,21 @@ vector<int> choose_sort(vector<int> a) {
 	return a;
 }
 
-int main() {
-	for (int i = 0; i < 100; ++i) {
-		cout << checkout(choose_sort(testData(100))) << endl;
+vector<int> insert_sort(vector<int> a) {
+	for (int i = 1; i < a.size(); ++i) {
+		int key = a[i];
+		int j = i - 1;
+		while (j >= 0 && key < a[j]) {
+			a[j + 1] = a[j];
+			--j;
+		}
+		a[j + 1] = key;
 	}
+	return a;
+}
+
+//not manual
+
+int main() {
+	
 }
