@@ -10,7 +10,6 @@ struct Node {
 
 class Binary_search_tree {
 public:
-	//´ýÐÞ¸Ä½Ó¿Ú
 	void insert(Node n);//pass
 	void insert_many(Node nodes[], int n);//pass
 	void remove(int n);
