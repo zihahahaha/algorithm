@@ -20,7 +20,6 @@ bool checkout(vector<int> a) {
 }
 
 
-//manual
 vector<int> bubble_sort(vector<int> a) {
 	for (int i = 0; i < a.size() - 1; ++i)
 		for (int j = 0; j < a.size() - i - 1; ++j)
