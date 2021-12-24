@@ -1,0 +1,46 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+
+
+int g_v = 10;
+const int cg_v = 10;
+const char* s_v = "a";
+int* h_v = new int;
+
+struct Data {
+	Data(){}
+	std::string name;
+	int location;
+};
+
+bool cmp(Data a, Data b) {
+	return a.location < b.location;
+}
+
+int main() {
+	int stack_v = 10;
+	Data mem[10];
+	mem[0].name = "代码区: ";
+	mem[0].location = (int)main;
+	mem[1].name = "堆区: ";
+	mem[1].location = (int)h_v;
+	mem[2].name = "全局变量区: ";
+	mem[2].location = (int)&g_v;
+	mem[3].name = "常量区: ";
+	mem[3].location = (int)&cg_v;
+	mem[4].name = "字符串区： ";
+	mem[4].location = (int)s_v;
+	mem[5].name = "栈区： ";
+	mem[5].location = (int)&stack_v;
+
+	std::sort(&mem[0], &mem[5], cmp);
+
+
+	std::cout << std::hex << std::uppercase;
+	for (int i = 0; i <= 5; ++i) {
+		std::cout << mem[i].name << mem[i].location << std::endl;
+	}
+	
+
+}
