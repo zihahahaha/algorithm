@@ -9,7 +9,7 @@ const char* s_v = "a";
 int* h_v = new int;
 
 struct Data {
-	Data(){}
+	Data() {}
 	std::string name;
 	int location;
 };
@@ -34,13 +34,13 @@ int main() {
 	mem[5].name = "栈区： ";
 	mem[5].location = (int)&stack_v;
 
-	std::sort(&mem[0], &mem[5], cmp);
+	std::sort(mem, mem + 6, cmp);
 
 
 	std::cout << std::hex << std::uppercase;
 	for (int i = 0; i <= 5; ++i) {
 		std::cout << mem[i].name << mem[i].location << std::endl;
 	}
-	
+
 
 }
